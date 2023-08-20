@@ -1,0 +1,42 @@
+:root {
+	--fg-color: #c0c0c0;
+	--bg-color: #000000;
+	--hl-color: #ffffff;
+}
+
+*, ::before, ::after {
+	box-sizing: border-box;
+	margin: 0;
+	border: none;
+	padding: 0;
+	color: inherit;
+	font-size: inherit;
+	text-decoration: none;
+}
+
+a {
+	color: var(--hl-color);
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+body {
+	color: var(--fg-color);
+	background-color: var(--bg-color);
+	font-size: 16px;
+	font-family: monospace;
+}
+
+h1 {
+	font-size: 64px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+h3 {
+	font-size: 16px;
+}

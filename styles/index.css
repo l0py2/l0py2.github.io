@@ -1,0 +1,26 @@
+#greeting {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	margin-bottom: 24px;
+}
+
+h3, p {
+	margin-bottom: 12px;
+}
+
+section:not(#greeting) {
+	margin: 80px 20rem;
+	border-bottom: 8px solid var(--fg-color);
+	padding: 64px;
+}
