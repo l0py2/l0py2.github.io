@@ -24,3 +24,21 @@ section:not(#greeting) {
 	border-bottom: 8px solid var(--fg-color);
 	padding: 64px;
 }
+
+@media screen and (max-width: 1200px) {
+	section:not(#greeting) {
+		margin: 80px 10rem;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	section:not(#greeting) {
+		margin: 80px 5rem;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	section:not(#greeting) {
+		margin: 80px 0;
+	}
+}
