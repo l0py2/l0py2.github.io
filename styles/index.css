@@ -7,12 +7,8 @@
 	align-items: center;
 }
 
-h1 {
+h1, #greeting h2 {
 	text-align: center;
-}
-
-h2 {
-	margin-bottom: 24px;
 }
 
 h3, p {
@@ -20,25 +16,16 @@ h3, p {
 }
 
 section:not(#greeting) {
-	margin: 80px 20rem;
 	border-bottom: 8px solid var(--fg-color);
-	padding: 64px;
+	padding: 4rem;
 }
 
-@media screen and (max-width: 1200px) {
-	section:not(#greeting) {
-		margin: 80px 10rem;
-	}
-}
-
-@media screen and (max-width: 1000px) {
-	section:not(#greeting) {
-		margin: 80px 5rem;
-	}
+th {
+	min-width: max-content;
 }
 
 @media screen and (max-width: 800px) {
 	section:not(#greeting) {
-		margin: 80px 0;
+		padding: 2rem;
 	}
 }

@@ -12,6 +12,33 @@
 	color: inherit;
 	font-size: inherit;
 	text-decoration: none;
+	word-break: break-word;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	color: var(--fg-color); background-color: var(--bg-color);
+	font-size: 16px;
+	font-family: monospace;
+}
+
+header {
+	padding: 10px;
+}
+
+main {
+	margin: 40px 20rem;
+}
+
+h1, h2 {
+	margin: 24px 0;
+}
+
+h3, p, ul, table {
+	margin: 4px 0;
 }
 
 a {
@@ -22,21 +49,36 @@ a:hover {
 	text-decoration: underline;
 }
 
-body {
-	color: var(--fg-color);
-	background-color: var(--bg-color);
-	font-size: 16px;
-	font-family: monospace;
-}
-
 h1 {
-	font-size: 64px;
+	font-size: 4rem;
 }
 
 h2 {
-	font-size: 32px;
+	font-size: 2rem;
 }
 
-h3 {
-	font-size: 16px;
+@media screen and (max-width: 1200px) {
+	main {
+		margin: 40px 10rem;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	main {
+		margin: 40px 5rem;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	main {
+		margin: 40px 2rem;
+	}
+
+	h1 {
+		font-size: 3.4rem;
+	}
+
+	h2 {
+		font-size: 1.4rem;
+	}
 }
