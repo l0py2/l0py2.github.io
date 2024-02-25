@@ -1,7 +1,24 @@
 :root {
-	--fg-color: #c0c0c0;
-	--bg-color: #000000;
-	--hl-color: #ffffff;
+	--fg-color: #dcdcdc;
+	--bg-color: #2f2f2f;
+	--b-color: #3f3f3f;
+	--fg-hl-color: #ffff00;
+	--bg-hl-color: #3f3f3f;
+	--tiny-space: 2px;
+	--small-space: 4px;
+	--medium-space: 8px;
+	--big-space: 12px;
+	--huge-space: 32px;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--fg-color: #0f0f0f;
+		--bg-color: #fafafa;
+		--b-color: #dedede;
+		--fg-hl-color: #00c0c0;
+		--bg-hl-color: #dedede;
+	}
 }
 
 *, ::before, ::after {
@@ -20,29 +37,14 @@ html {
 }
 
 body {
-	color: var(--fg-color); background-color: var(--bg-color);
+	color: var(--fg-color);
+	background-color: var(--bg-color);
 	font-size: 16px;
-	font-family: monospace;
-}
-
-header {
-	padding: 10px;
-}
-
-main {
-	margin: 40px 20rem;
-}
-
-h1, h2 {
-	margin: 24px 0;
-}
-
-h3, p, ul, table {
-	margin: 4px 0;
+	font-family: sans-serif;
 }
 
 a {
-	color: var(--hl-color);
+	color: var(--fg-hl-color);
 }
 
 a:hover {
@@ -57,23 +59,11 @@ h2 {
 	font-size: 2rem;
 }
 
-@media screen and (max-width: 1200px) {
-	main {
-		margin: 40px 10rem;
-	}
-}
-
-@media screen and (max-width: 1000px) {
-	main {
-		margin: 40px 5rem;
-	}
+ul {
+	padding-left: var(--big-space);
 }
 
 @media screen and (max-width: 800px) {
-	main {
-		margin: 40px 2rem;
-	}
-
 	h1 {
 		font-size: 3.4rem;
 	}
