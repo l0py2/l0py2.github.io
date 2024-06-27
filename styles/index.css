@@ -1,16 +1,84 @@
-#greeting {
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
+h1 {
+	font-size: 1.8rem;
+}
+h2 {
+	font-size: 1.6rem;
 }
 
-section:not(#greeting) {
-	margin: var(--huge-space);
-	padding: var(--small-space);
-	border: var(--tiny-space) solid var(--b-color);
-	border-radius: var(--medium-space);
-	background-color: var(--bg-hl-color);
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	align-items: center;
+	margin: var(--normal-spacing);
+}
+
+header > img {
+	width: 64px;
+}
+
+header > img, header > h1 {
+	margin: 0 var(--normal-spacing);
+}
+
+#menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	list-style: none;
+}
+
+#menu > li {
+	text-align: center;
+	margin: var(--normal-spacing);
+}
+
+section {
+	padding: var(--big-spacing);
+	border-radius: var(--normal-radius);
+	margin: var(--big-spacing);
+	background-color: var(--h-bg-color);
+}
+
+section h2 {
+	margin-bottom: var(--normal-spacing);
+}
+
+section h3 {
+	margin: var(--small-spacing) 0;
+}
+
+section p {
+	font-size: 1rem;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+tr {
+	border: var(--normal-border) var(--h-fg-color);
+}
+
+td {
+	padding: var(--little-spacing) var(--small-spacing);
+}
+
+footer {
+	font-size: 0.8rem;
+	text-align: right;
+	padding: var(--little-spacing) var(--small-spacing);
+}
+
+@media screen and (max-width: 600px) {
+	#menu {
+		flex-direction: column;
+	}
+
+	#menu > li {
+		width: 100%;
+		margin: var(--normal-spacing) 0;
+	}
 }
