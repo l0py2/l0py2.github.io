@@ -1,0 +1,36 @@
+main {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: start;
+	align-content: center;
+}
+
+section {
+	display: inline-block;
+	margin: 8px;
+	border: 2px solid black;
+	border-radius: 8px;
+	padding: 8px;
+	max-width: 40%;
+}
+
+td {
+	vertical-align: middle;
+}
+
+td > img {
+	height: 32px;
+}
+
+li > ul {
+	padding-left: 16px;
+}
+
+footer {
+	position: fixed;
+	text-align: right;
+	bottom: 0;
+	right: 0;
+	font-size: 0.8rem;
+}
