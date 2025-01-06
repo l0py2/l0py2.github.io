@@ -1,7 +1,9 @@
 :root {
-      --bg-color: #e0f5d0;
-      --fg-color: #247982;
+      --bg-color: #fcd9e8;
+      --fg-color: #314530;
       --h-color: #f76895;
+	--white: #faf5f8;
+	--red: #f58c8c;
 }
 
 *, ::before, ::after {
@@ -12,7 +14,7 @@
 }
 
 html {
-      font-size: 16px;
+      font-size: 24px;
       font-family: sans-serif;
 }
 
@@ -21,6 +23,26 @@ body {
       color: var(--fg-color);
 }
 
+a, .highlighted {
+	color: var(--red);
+}
+
+a {
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
 ul {
 	list-style: none;
+}
+
+li {
+	padding-left: 1rem;
+}
+
+td {
+	vertical-align: middle;
 }

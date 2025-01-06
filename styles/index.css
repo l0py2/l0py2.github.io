@@ -4,28 +4,37 @@ main {
 	flex-wrap: wrap;
 	justify-content: start;
 	align-content: center;
+	padding: 0 20%;
+}
+
+#welcome {
+	width: 100%;
+	padding: 4vh 4vw;
+	font-size: 2rem;
+	text-align: center;
 }
 
 section {
 	display: inline-block;
+	width: 100%;
 	margin: 8px;
-	border: 2px solid black;
+	background-color: var(--white);
 	border-radius: 8px;
 	padding: 8px;
-	max-width: 40%;
+}
+
+li > img {
+	max-width: 100%;
 }
 
 td {
-	vertical-align: middle;
+	padding: 0.2rem;
 }
 
 td > img {
 	height: 32px;
 }
 
-li > ul {
-	padding-left: 16px;
-}
 
 footer {
 	position: fixed;
