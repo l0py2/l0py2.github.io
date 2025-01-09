@@ -4,37 +4,33 @@ main {
 	flex-wrap: wrap;
 	justify-content: start;
 	align-content: center;
-	padding: 0 20%;
+	padding: 1rem 20%;
 }
 
 #welcome {
 	width: 100%;
 	padding: 4vh 4vw;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	text-align: center;
 }
 
 section {
 	display: inline-block;
 	width: 100%;
-	margin: 8px;
+	margin: var(--small);
 	background-color: var(--white);
-	border-radius: 8px;
-	padding: 8px;
+	border-radius: var(--small);
+	padding: var(--small);
 }
 
 li > img {
 	max-width: 100%;
 }
 
-td {
-	padding: 0.2rem;
-}
 
 td > img {
 	height: 32px;
 }
-
 
 footer {
 	position: fixed;
@@ -42,4 +38,10 @@ footer {
 	bottom: 0;
 	right: 0;
 	font-size: 0.8rem;
+}
+
+@media screen and (max-width: 800px) {
+	main {
+		padding: 1rem 10%;
+	}
 }

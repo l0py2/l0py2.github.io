@@ -4,6 +4,7 @@
       --h-color: #f76895;
 	--white: #faf5f8;
 	--red: #f58c8c;
+	--small: 8px;
 }
 
 *, ::before, ::after {
@@ -45,4 +46,15 @@ li {
 
 td {
 	vertical-align: middle;
+	padding: 0.2rem;
+}
+
+@media screen and (max-width: 800px) {
+	:root {
+		--small: 4px;
+	}
+
+	html {
+		font-size: 12px;
+	}
 }
