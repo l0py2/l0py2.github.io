@@ -1,10 +1,13 @@
 :root {
       --bg-color: #fcd9e8;
-      --fg-color: #314530;
+      --fg-color: #000000;
       --h-color: #f76895;
 	--white: #faf5f8;
 	--red: #f58c8c;
 	--small: 8px;
+	--medium: 16px;
+	--big: 32px;
+	--huge: 64px;
 }
 
 *, ::before, ::after {

@@ -14,6 +14,10 @@ main {
 	text-align: center;
 }
 
+#welcome > * {
+	margin: var(--huge) 0;
+}
+
 section {
 	display: inline-block;
 	width: 100%;
@@ -23,13 +27,8 @@ section {
 	padding: var(--small);
 }
 
-li > img {
-	max-width: 100%;
-}
-
-
-td > img {
-	height: 32px;
+h2 {
+	margin-bottom: var(--small);
 }
 
 footer {
@@ -37,7 +36,30 @@ footer {
 	text-align: right;
 	bottom: 0;
 	right: 0;
-	font-size: 0.8rem;
+	font-size: 0.5rem;
+}
+
+#social .card-list {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+}
+
+.card-list > div {
+	margin: 0 0.5rem;
+	border-radius: var(--small);
+	padding: var(--small);
+	display: flex;
+	flex-direction: column;
+	justify-contet: center;
+	align-items: center;
+	background-color: var(--bg-color);
+}
+
+.card-list img {
+	height: var(--big);
+	max-width: 100%;
 }
 
 @media screen and (max-width: 800px) {
