@@ -22,7 +22,7 @@ section {
 	display: inline-block;
 	width: 100%;
 	margin: var(--small);
-	background-color: var(--white);
+	border: var(--small) solid var(--h1-color);
 	border-radius: var(--small);
 	padding: var(--small);
 }
@@ -54,7 +54,7 @@ footer {
 	flex-direction: column;
 	justify-contet: center;
 	align-items: center;
-	background-color: var(--bg-color);
+	border: var(--small) solid var(--h1-color);
 }
 
 .card-list img {

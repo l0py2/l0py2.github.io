@@ -1,9 +1,8 @@
 :root {
-      --bg-color: #fcd9e8;
-      --fg-color: #000000;
-      --h-color: #f76895;
-	--white: #faf5f8;
-	--red: #f58c8c;
+      --bg-color: #ffe3e3;
+      --fg-color: #262a53;
+      --h1-color: #ffa0a0;
+	--h2-color: #628395;
 	--small: 8px;
 	--medium: 16px;
 	--big: 32px;
@@ -28,7 +27,7 @@ body {
 }
 
 a, .highlighted {
-	color: var(--red);
+	color: var(--h2-color);
 }
 
 a {
@@ -55,6 +54,9 @@ td {
 @media screen and (max-width: 800px) {
 	:root {
 		--small: 4px;
+		--medium: 8px;
+		--big: 16px;
+		--huge: 32px;
 	}
 
 	html {
