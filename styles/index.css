@@ -59,7 +59,6 @@ footer {
 
 .card-list img {
 	height: var(--big);
-	max-width: 100%;
 }
 
 @media screen and (max-width: 800px) {
