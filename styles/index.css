@@ -1,68 +1,74 @@
-main {
+*, ::before, ::after {
+	appearance: none;
+	border: none;
+	box-sizing: border-box;
+	margin: 0;
+	outline: none;
+	padding: 0;
+}
+
+html {
+	font-family: monospace;
+	font-size: 16px;
+}
+
+hr {
+	border: solid 0.1rem white;
+	margin: 0.5rem 0;
+}
+
+body {
+	background-color: black;
+	color: white;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: start;
-	align-content: center;
-	padding: 1rem 20%;
+	flex-direction: column;
+	height: 100vh;
+	width: 100vw;
 }
 
-#welcome {
-	width: 100%;
-	padding: 4vh 4vw;
-	font-size: 1.5rem;
-	text-align: center;
+header, main, footer {
+	margin: 0 1rem;
+	padding: 1rem;
 }
 
-#welcome > * {
-	margin: var(--huge) 0;
+main, footer {
+	border: 0.2rem white solid;
 }
 
-section {
-	display: inline-block;
-	width: 100%;
-	margin: var(--small);
-	border: var(--small) solid var(--h1-color);
-	border-radius: var(--small);
-	padding: var(--small);
-}
-
-h2 {
-	margin-bottom: var(--small);
+main {
+	border-bottom-width: 0;
+	flex-basis: 100%;
+	margin-top: 1rem;
+	overflow-wrap: break-word;
+	overflow-y: scroll;
 }
 
 footer {
-	position: fixed;
-	text-align: right;
-	bottom: 0;
-	right: 0;
-	font-size: 0.5rem;
-}
-
-#social .card-list {
+	border-top-width: 0;
 	display: flex;
 	flex-direction: row;
-	justify-content: start;
-	align-items: center;
+	margin-bottom: 1rem;
 }
 
-.card-list > div {
-	margin: 0 0.5rem;
-	border-radius: var(--small);
-	padding: var(--small);
-	display: flex;
-	flex-direction: column;
-	justify-contet: center;
-	align-items: center;
-	border: var(--small) solid var(--h1-color);
+footer > input, footer > button {
+	background-color: transparent;
+	border: solid 0.1rem white;
+	color: white;
 }
 
-.card-list img {
-	height: var(--big);
+footer > input {
+	border-right-width: 0;
 }
 
-@media screen and (max-width: 800px) {
-	main {
-		padding: 1rem 10%;
-	}
+footer > button {
+	border-left-width: 0;
+}
+
+footer > input {
+	flex-basis: 100%;
+}
+
+footer > input:focus {
+	border-bottom-color: green;
+	border-top-color: green;
 }
