@@ -31,44 +31,47 @@ header, main, footer {
 	padding: 1rem;
 }
 
-main, footer {
-	border: 0.2rem white solid;
-}
-
-main {
-	border-bottom-width: 0;
-	flex-basis: 100%;
-	margin-top: 1rem;
-	overflow-wrap: break-word;
+main, #output-section, #output {
 	overflow-y: scroll;
 }
 
-footer {
-	border-top-width: 0;
+main {
+	border: 0.2rem white solid;
 	display: flex;
-	flex-direction: row;
-	margin-bottom: 1rem;
+	flex-direction: column;
+	height: 100%;
 }
 
-footer > input, footer > button {
+#output-section {
+	flex-basis: 100%;
+}
+
+#output {
+	overflow-wrap: break-word;
+	white-space: pre-wrap;
+}
+
+#input {
+	display: flex;
+	flex-direction: row;
+}
+
+#input > input, #input > button {
 	background-color: transparent;
 	border: solid 0.1rem white;
 	color: white;
 }
 
-footer > input {
+#input > input {
 	border-right-width: 0;
-}
-
-footer > button {
-	border-left-width: 0;
-}
-
-footer > input {
 	flex-basis: 100%;
 }
 
-footer > input:focus {
+#input > input:focus {
 	border-bottom-color: green;
 	border-top-color: green;
+}
+
+#input > button {
+	border-left-width: 0;
 }

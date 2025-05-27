@@ -1,133 +1,116 @@
 'use strict';
 
-function appendLetter(element, letter) {
-	return new Promise(resolve => {
-		setTimeout(() => {
-			element.append(letter);
-
-			resolve();
-		}, 1);
-	});
+function commandPrompt(outputElement, command) {
+	outputElement.append(`user@host $ ${command}`, document.createElement('br'));
 }
 
-async function appendText(element, lines, className) {
-	const resultText = document.createElement('span');
-	if(className != null) {
-		resultText.classList.add(className);
-	}
-	element.append(resultText);
-
-	const newBreak = document.createElement('hr');
-	element.append(newBreak);
-
-	for(const line of lines) {
-		const newParagraph = document.createElement('p');
-		resultText.append(newParagraph);
-
-		for(const letter of line) {
-			await appendLetter(resultText, letter);
-		}
-	}
+function clearOutput(outputElement) {
+	outputElement.innerHTML = '';
 }
 
-function appendCommand(element, command) {
-	const newLine = document.createElement('p');
-	element.append(newLine);
-
-	const promptText = document.createElement('span');
-	promptText.classList.add('fg-blue');
-	newLine.append(promptText);
-
-	promptText.append('user@host $ ');
-	newLine.append(command);
+function helpCommand(outputElement) {
+	outputElement.append('===== HELP =====\n\n');
+	outputElement.append('clear  - to clear all text\n');
+	outputElement.append('help   - to get help\n');
+	outputElement.append('about  - to know more about this page\n');
+	outputElement.append('lfetch - to know more about me\n');
 }
 
-function clear(element) {
-	element.innerHTML = '';
+function aboutCommand(outputElement) {
+	const sourceLink = document.createElement('a');
+	sourceLink.setAttribute('href', 'https://github.com/l0py2/l0py2.github.io');
+	sourceLink.setAttribute('target', '_blank');
+	sourceLink.append('l0py2.github.io');
+
+	outputElement.append('===== ABOUT =====\n\n');
+	outputElement.append('Repository - ', sourceLink, '\n');
 }
 
-async function help(element) {
-	await appendText(
-		element,
-		[
-			'===== HELP =====',
-			'clear - To clear all text',
-			'help  - For help',
-			'fetch - Fetch information about me'
-		],
-		null
-	);
+function lfetchCommand(outputElement) {
+	const githubLink = document.createElement('a');
+	githubLink.setAttribute('href', 'https://github.com/l0py2');
+	githubLink.setAttribute('target', '_blank');
+	githubLink.append('l0py2');
+	const emailLink = document.createElement('a');
+	emailLink.setAttribute('href', 'mailto:l0py2.contact@gmail.com');
+	emailLink.append('l0py2.contact@gmail.com');
+
+	outputElement.append('\n');
+	outputElement.append(' ||    ||===== It\'s life\n');
+	outputElement.append(' ||    ||      Contacts:\n');
+	outputElement.append(' ||    ||===== Github  - ', githubLink, '\n');
+	outputElement.append(' ||    ||      Discord - l0py2@l0py2\n');
+	outputElement.append(' ===== ||      Email   - ', emailLink, '\n\n');
+	outputElement.append('Favourite programming language: C\n\n');
+	outputElement.append('What I like:\n');
+	outputElement.append('- Lemons\n');
+	outputElement.append('- Potatoes\n');
+	outputElement.append('- Computers\n');
+	outputElement.append('- Minecraft\n');
+	outputElement.append('- Automation games\n');
+	outputElement.append('- Anime\n');
+	outputElement.append('- Vocaloid\n');
+	outputElement.append('- Breakbeat\n');
 }
 
-async function fetchAbout(element) {
-	await appendText(
-		element,
-		[
-			'===============',
-			' My name: l0py2',
-			'==============='
-		],
-		null
-	);
+function invalidCommand(outputElement, command) {
+	const text = document.createElement('span');
+	text.classList.add('fg-red');
+	outputElement.append(text);
+
+	text.append(`Command "${command}" not found\n`);
+	text.append('Use "help" to get help\n');
 }
 
-async function invalidCommand(element, command) {
-	await appendText(
-		element,
-		[
-			`Command "${command}" not found`,
-			'Use "help" to get help'
-		],
-		'fg-red'
-	);
-}
+function submitCommand(outputElement, inputElement) {
+	const command = inputElement.value;
+	inputElement.value = '';
 
-async function runCommand(element, command) {
-	appendCommand(element, command);
+	commandPrompt(outputElement, command);
 
 	switch(command) {
 		case 'clear':
-			clear(element);
+			clearOutput(outputElement);
 			break;
 		case 'help':
-			help(element);
+			helpCommand(outputElement);
 			break;
-		case 'fetch':
-			fetchAbout(element);
+		case 'about':
+			aboutCommand(outputElement);
+			break;
+		case 'lfetch':
+			lfetchCommand(outputElement);
 			break;
 		default:
-			invalidCommand(element, command);
+			invalidCommand(outputElement, command);
 	}
 }
 
-function submitHandler(element, commandInput) {
-	runCommand(element, commandInput.value);
-	commandInput.value = '';
-}
-
 (async () => {
-	const main = document.querySelector('main');
+	const output = document.querySelector('#output');
 
-	if(main == null) {
-		return;
+	if(output == null) {
+		throw new Error('output element not found');
 	}
 
 	const commandInput = document.querySelector('input[name="command"]');
 
 	if(commandInput == null) {
-		return;
+		throw new Error('command input not found');
 	}
 
-	const submitButton = document.querySelector('button[type="submit"]');
+	const commandSubmit = document.querySelector('button[type="submit"]');
 
-	if(submitButton == null) {
-		return;
+	if(commandSubmit == null) {
+		throw new Error('command submit button not found');
 	}
 
-	submitButton.addEventListener('click', event => submitHandler(main, commandInput));
 	commandInput.addEventListener('keyup', event => {
-		if(event.key ==  'Enter') {
-			submitHandler(main, commandInput);
+		if(event.key == 'Enter') {
+			submitCommand(output, commandInput);
 		}
+	});
+	commandSubmit.addEventListener('click', event => {
+		submitCommand(output, commandInput);
 	});
 })();
