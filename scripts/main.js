@@ -1,7 +1,14 @@
 'use strict';
 
 function commandPrompt(outputElement, command) {
-	outputElement.append(`user@host $ ${command}`, document.createElement('br'));
+	const userText = document.createElement('span');
+	userText.classList.add('fg-green');
+	userText.append('user');
+	const hostText = document.createElement('span');
+	hostText.classList.add('fg-cyan');
+	hostText.append('host');
+
+	outputElement.append(userText, '@', hostText, ` $ ${command}\n`);
 }
 
 function clearOutput(outputElement) {
@@ -37,7 +44,7 @@ function lfetchCommand(outputElement) {
 
 	outputElement.append('\n');
 	outputElement.append(' ||    ||===== It\'s life\n');
-	outputElement.append(' ||    ||      Contacts:\n');
+	outputElement.append(' ||    ||      \n');
 	outputElement.append(' ||    ||===== Github  - ', githubLink, '\n');
 	outputElement.append(' ||    ||      Discord - l0py2@l0py2\n');
 	outputElement.append(' ===== ||      Email   - ', emailLink, '\n\n');
