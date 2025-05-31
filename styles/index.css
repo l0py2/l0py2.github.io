@@ -1,77 +1,64 @@
-*, ::before, ::after {
-	appearance: none;
-	border: none;
-	box-sizing: border-box;
-	margin: 0;
-	outline: none;
-	padding: 0;
-}
-
-html {
-	font-family: monospace;
-	font-size: 16px;
-}
-
-hr {
-	border: solid 0.1rem white;
-	margin: 0.5rem 0;
-}
-
 body {
 	background-color: black;
 	color: white;
+}
+
+header, main {
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
-	width: 100vw;
+	gap: 1rem;
+	margin: 1rem 10rem;
 }
 
-header, main, footer {
-	margin: 0 1rem;
-	padding: 1rem;
+#terminal {
+	border: 0.2rem solid white;
+	display: flex;
+	flex-direction: column;
+	height: 80vh;
+	width: 100%;
 }
 
-main, #output-section, #output {
+#terminal > div {
+	padding: 0 0.5rem;
+	width: 100%;
+}
+
+div.terminal-header {
+	background-color: white;
+	border-bottom: 0.2rem solid white;
+	color: black;
+}
+
+.terminal-output {
 	overflow-y: scroll;
 }
 
-main {
-	border: 0.2rem white solid;
-	display: flex;
-	flex-direction: column;
+div.terminal-output {
 	height: 100%;
 }
 
-#output-section {
-	flex-basis: 100%;
-}
-
-#output {
-	overflow-wrap: break-word;
+pre.terminal-output {
+	word-break: break-all;
 	white-space: pre-wrap;
 }
 
-#input {
+div.terminal-input {
 	display: flex;
-	flex-direction: row;
+	margin: 0.5rem 0;
 }
 
-#input > input, #input > button {
-	background-color: transparent;
-	border: solid 0.1rem white;
+input.terminal-input, button.terminal-input {
+	background: transparent;
+	border: 0.1rem solid white;
 	color: white;
+	padding: 0.2rem 0.5rem;
 }
 
-#input > input {
+input.terminal-input {
 	border-right-width: 0;
-	flex-basis: 100%;
+	width: 100%;
 }
 
-#input > input:focus {
-	border-bottom-color: green;
-	border-top-color: green;
-}
-
-#input > button {
+button.terminal-input {
 	border-left-width: 0;
 }

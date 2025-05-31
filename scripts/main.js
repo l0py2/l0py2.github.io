@@ -94,19 +94,19 @@ function submitCommand(outputElement, inputElement) {
 }
 
 (async () => {
-	const output = document.querySelector('#output');
+	const output = document.querySelector('pre.terminal-output');
 
 	if(output == null) {
 		throw new Error('output element not found');
 	}
 
-	const commandInput = document.querySelector('input[name="command"]');
+	const commandInput = document.querySelector('input.terminal-input');
 
 	if(commandInput == null) {
 		throw new Error('command input not found');
 	}
 
-	const commandSubmit = document.querySelector('button[type="submit"]');
+	const commandSubmit = document.querySelector('button.terminal-input');
 
 	if(commandSubmit == null) {
 		throw new Error('command submit button not found');

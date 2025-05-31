@@ -1,0 +1,13 @@
+*, ::before, ::after {
+	appearance: none;
+	border: none;
+	box-sizing: border-box;
+	margin: 0;
+	outline: none;
+	padding: 0;
+}
+
+html {
+	font-family: monospace;
+	font-size: 16px;
+}
