@@ -62,3 +62,9 @@ input.terminal-input {
 button.terminal-input {
 	border-left-width: 0;
 }
+
+@media screen and (max-width: 800px) {
+	header, main {
+		margin: 1rem 2rem;
+	}
+}
