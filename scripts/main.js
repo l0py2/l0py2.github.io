@@ -69,7 +69,7 @@ function invalidCommand(outputElement, command) {
 	text.append('Use "help" to get help\n');
 }
 
-function submitCommand(outputElement, inputElement) {
+function submitCommand(outputFrame, outputElement, inputElement) {
 	const command = inputElement.value;
 	inputElement.value = '';
 
@@ -91,9 +91,21 @@ function submitCommand(outputElement, inputElement) {
 		default:
 			invalidCommand(outputElement, command);
 	}
+
+	outputFrame.scroll({
+		top: outputFrame.scrollHeight,
+		left: 0,
+		behavior: 'auto'
+	});
 }
 
 (async () => {
+	const outputFrame = document.querySelector('div.terminal-output');
+
+	if(outputFrame == null) {
+		throw new Error('output frame not found');
+	}
+
 	const output = document.querySelector('pre.terminal-output');
 
 	if(output == null) {
@@ -114,10 +126,10 @@ function submitCommand(outputElement, inputElement) {
 
 	commandInput.addEventListener('keyup', event => {
 		if(event.key == 'Enter') {
-			submitCommand(output, commandInput);
+			submitCommand(outputFrame, output, commandInput);
 		}
 	});
 	commandSubmit.addEventListener('click', event => {
-		submitCommand(output, commandInput);
+		submitCommand(outputFrame, output, commandInput);
 	});
 })();
