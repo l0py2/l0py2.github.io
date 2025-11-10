@@ -1,17 +1,12 @@
-body {
-	background-color: black;
-	color: white;
-}
-
 header, main {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-	margin: 1rem 10rem;
+	margin: 1rem 6rem;
 }
 
 #terminal {
-	border: 0.2rem solid white;
+	border: 0.2rem solid var(--ctp-lavender);
 	display: flex;
 	flex-direction: column;
 	height: 80vh;
@@ -24,9 +19,9 @@ header, main {
 }
 
 div.terminal-header {
-	background-color: white;
-	border-bottom: 0.2rem solid white;
-	color: black;
+	background-color: var(--ctp-text);
+	border-bottom: 0.2rem solid var(--ctp-text);
+	color: var(--ctp-base);
 }
 
 .terminal-output {
@@ -49,8 +44,7 @@ div.terminal-input {
 
 input.terminal-input, button.terminal-input {
 	background: transparent;
-	border: 0.1rem solid white;
-	color: white;
+	border: 0.1rem solid var(--ctp-overlay0);
 	padding: 0.2rem 0.5rem;
 }
 

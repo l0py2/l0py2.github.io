@@ -1,13 +1,32 @@
 *, ::before, ::after {
-	appearance: none;
+	appearence: none;
 	border: none;
 	box-sizing: border-box;
 	margin: 0;
 	outline: none;
 	padding: 0;
+	text-decoration: none;
 }
 
 html {
 	font-family: monospace;
 	font-size: 16px;
+}
+
+body {
+	background-color: var(--ctp-base);
+	color: var(--ctp-text);
+}
+
+input, button {
+	color: var(--ctp-text);
+}
+
+a {
+	color: var(--ctp-blue);
+}
+
+a:hover, button:hover {
+	text-decoration: underline;
+	cursor: pointer;
 }
