@@ -1,12 +1,31 @@
 'use strict';
 
+const terminalColors = {
+	black: 'color0',
+	red: 'color1',
+	green: 'color2',
+	yellow: 'color3',
+	blue: 'color4',
+	pink: 'color5',
+	teal: 'color6',
+	white: 'color7'
+}
+
+function colorText(text, color) {
+	const coloredText = document.createElement('span');
+
+	coloredText.style.color = `var(--term-${color})`;
+
+	if (text) {
+		coloredText.append(text);
+	}
+
+	return coloredText;
+}
+
 function commandPrompt(outputElement, command) {
-	const userText = document.createElement('span');
-	userText.classList.add('fg-green');
-	userText.append('user');
-	const hostText = document.createElement('span');
-	hostText.classList.add('fg-cyan');
-	hostText.append('host');
+	const userText = colorText('user', terminalColors.green);
+	const hostText = colorText('host', terminalColors.blue);
 
 	outputElement.append(userText, '@', hostText, ` $ ${command}\n`);
 }
@@ -61,12 +80,11 @@ function lfetchCommand(outputElement) {
 }
 
 function invalidCommand(outputElement, command) {
-	const text = document.createElement('span');
-	text.classList.add('fg-red');
-	outputElement.append(text);
-
+	const text = colorText('', terminalColors.red);
 	text.append(`Command "${command}" not found\n`);
 	text.append('Use "help" to get help\n');
+
+	outputElement.append(text);
 }
 
 function submitCommand(outputFrame, outputElement, inputElement) {

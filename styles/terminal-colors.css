@@ -1,0 +1,10 @@
+:root {
+	--term-color0: var(--ctp-surface1);
+	--term-color1: var(--ctp-red);
+	--term-color2: var(--ctp-green);
+	--term-color3: var(--ctp-yellow);
+	--term-color4: var(--ctp-blue);
+	--term-color5: var(--ctp-pink);
+	--term-color6: var(--ctp-teal);
+	--term-color7: var(--ctp-subtext0);
+}
