@@ -62,14 +62,14 @@ function lfetchCommand(outputElement) {
 	emailLink.append('l0py2.contact@gmail.com');
 
 	outputElement.append('\n');
-	outputElement.append(' ||    ||===== It\'s life\n');
-	outputElement.append(' ||    ||      \n');
-	outputElement.append(' ||    ||===== Github  - ', githubLink, '\n');
-	outputElement.append(' ||    ||      Discord - l0py2@l0py2\n');
-	outputElement.append(' ===== ||      Email   - ', emailLink, '\n\n');
-	outputElement.append('Favourite programming language: C\n\n');
-	outputElement.append('What I like:\n');
-	outputElement.append('- Lemons\n');
+	outputElement.append(' ||    ||===== ', colorText('It\'s life', terminalColors.green), '\n');
+	outputElement.append(' ||    ||      ', '\n');
+	outputElement.append(' ||    ||===== ', 'GitHub  - ', githubLink, '\n');
+	outputElement.append(' ||    ||      ', 'Discord - l0py2@l0py2\n');
+	outputElement.append(' ===== ||      ', 'Email   - ', emailLink, '\n\n');
+	outputElement.append(colorText('Favourite programming language: C', terminalColors.pink), '\n\n');
+	outputElement.append(colorText('What I like:', terminalColors.blue), '\n');
+	outputElement.append('- ', colorText('Lemons', terminalColors.yellow),'\n');
 	outputElement.append('- Potatoes\n');
 	outputElement.append('- Computers\n');
 	outputElement.append('- Minecraft\n');
