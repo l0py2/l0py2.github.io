@@ -2,6 +2,7 @@
 	appearence: none;
 	border: none;
 	box-sizing: border-box;
+	color: inherit;
 	margin: 0;
 	outline: none;
 	padding: 0;
@@ -18,10 +19,6 @@ body {
 	color: var(--ctp-text);
 }
 
-input, button {
-	color: var(--ctp-text);
-}
-
 a {
 	color: var(--ctp-blue);
 }
@@ -29,4 +26,8 @@ a {
 a:hover, button:hover {
 	text-decoration: underline;
 	cursor: pointer;
+}
+
+li {
+	margin-left: 1rem;
 }
