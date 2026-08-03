@@ -31,3 +31,11 @@ a:hover, button:hover {
 li {
 	margin-left: 1rem;
 }
+
+s {
+	text-decoration: line-through;
+}
+
+.emoticon {
+	white-space: preserve nowrap;
+}
