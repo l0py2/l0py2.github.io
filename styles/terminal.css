@@ -1,0 +1,50 @@
+:root {
+	--term-fg: var(--ctp-text);
+	--term-bg: var(--ctp-mantle);
+	--term-header-fg: var(--ctp-blue);
+	--term-header-bg: var(--ctp-crust);
+}
+
+#terminal-window {
+	background-color: var(--term-bg);
+	color: var(--term-fg);
+	width: 100%;
+}
+
+div.terminal-header {
+	background-color: var(--term-header-bg);
+	color: var(--term-header-fg);
+}
+
+h2.terminal-header {
+	padding: 0.5rem 1rem;
+}
+
+div.terminal-header, div.terminal-input {
+	background-color: var(--term-header-bg);
+	color: var(--term-header-fg);
+}
+
+pre.terminal-output {
+	overflow-y: scroll;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+div.terminal-output {
+	height: 30vh;
+}
+
+div.terminal-input {
+	display: flex;
+	flex-direction: row;
+}
+
+input.terminal-input {
+	flex-grow: 1;
+}
+
+input.terminal-input, button.terminal-input {
+	background: transparent;
+	padding: 0.5rem 1rem;
+}
