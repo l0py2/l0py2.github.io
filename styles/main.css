@@ -1,5 +1,5 @@
 *, ::before, ::after {
-	appearence: none;
+	appearance: none;
 	border: none;
 	box-sizing: border-box;
 	color: inherit;
@@ -12,15 +12,6 @@
 html {
 	font-family: monospace;
 	font-size: 16px;
-}
-
-body {
-	background-color: var(--ctp-base);
-	color: var(--ctp-text);
-}
-
-a {
-	color: var(--ctp-blue);
 }
 
 a:hover, button:hover {

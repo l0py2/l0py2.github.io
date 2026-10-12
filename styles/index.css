@@ -1,50 +1,88 @@
-header, main {
+:root {
+	--body-fg: var(--ctp-text);
+	--body-bg: var(--ctp-base);
+
+	--menu-fg: var(--ctp-green);
+	--menu-bg: var(--ctp-crust);
+	--menu-sel-fg: var(--ctp-crust);
+	--menu-sel-bg: var(--ctp-green);
+
+	--sec-border: 4px solid var(--ctp-red);
+	--sec-fg: var(--ctp-text);
+	--sec-bg: var(--ctp-surface0);
+	--sec-header-fg: var(--ctp-red);
+	--sec-header-bg: var(--ctp-mantle);
+}
+
+body {
+	background-color: var(--body-bg);
+	color: var(--body-fg);
+}
+
+header {
+	background-color: var(--menu-bg);
+	color: var(--menu-fg);
+}
+
+#menu {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+#menu > p {
+	padding: 1rem 2rem;
+	text-align: center;
+}
+
+#menu > a {
+	flex-grow: 1;
+	padding: 1rem 0;
+	text-align: center;
+}
+
+#menu > p, #menu > a:hover {
+	background-color: var(--menu-sel-bg);
+	color: var(--menu-sel-fg);
+}
+
+main {
 	margin: 2rem 4rem;
 }
 
-header > nav {
-	display: flex;
-	flex-direction: row;
-	gap: 2rem;
+section {
+	background-color: var(--sec-bg);
+	border: var(--sec-border);
+	color: var(--sec-fg);
+	margin-bottom: 1rem;
 }
 
-main > section {
+section > h2 {
+	background-color: var(--sec-header-bg);
+	color: var(--sec-header-fg);
+}
+
+section > h2, section > div {
 	padding: 1rem 2rem;
 }
 
-main > section:first-child {
-	border-radius: 16px 16px 0 0;
-}
-
-main > section:last-child {
-	border-radius: 0 0 16px 16px;
-}
-
-main > section:nth-child(odd) {
-	background-color: var(--ctp-surface2);
-}
-
-main > section:nth-child(even) {
-	background-color: var(--ctp-surface0);
-}
-
-h2 {
-	margin-bottom: 0.5rem;
-}
-
-h3 {
-	margin: 0.4rem 0;
+footer {
+	font-size: 0.6rem;
 }
 
 @media screen and (max-width: 800px) {
-	header, main {
+	main {
 		margin: 2rem 2rem;
 	}
 
-	header > nav {
-		display: flex;
-		flex-direction: column;
+	#menu {
 		align-items: center;
-		gap: 1rem;
+		flex-direction: column;
+	}
+
+	#menu > p, #menu > a {
+		width: 100%;
 	}
 }
